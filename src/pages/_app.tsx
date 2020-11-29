@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: any) {
 			<MainHeader></MainHeader>
 			<Loader></Loader>
 			<Component {...pageProps} />
-			{/* <MainFooter></MainFooter> */}
+			<MainFooter></MainFooter>
 		</React.Fragment>
 	);
 }

@@ -1,46 +1,46 @@
-import { Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@material-ui/core";
+import { FormControl, FormControlLabel, Radio, RadioGroup } from "@material-ui/core";
 import { Component } from "react";
 import pizzaService from "../../../services/pizza.service";
 import styles from './Size.module.scss';
 
 class Size extends Component {
-
 	sizes: any[] = [];
+	size = '';
 
 	constructor(props: any) {
 		super(props);
-		this.state = { sizes: [] };
+
+		this.size = props.size;
+		this.sizes = props.sizes;
+		this.state = {
+			size: this.size,
+			sizes: this.sizes
+		};
+
+		this.handleChange = this.handleChange.bind(this);
 	}
 
-	async componentDidMount() {
-		this.sizes = await pizzaService.getSizeList();
-		this.setState({ sizes: this.sizes });
-	}
-
-	next() {
-
+	handleChange(event: any) {
+		this.size = event.target.value;
+		pizzaService.setSize(this.size);
+		this.setState({ size: this.size });
 	}
 
 	render() {
 		return (
-			<section className={styles.size}>
-				<h2>Tamanho</h2>
-
+			<section>
 				<form>
 					<FormControl component="fieldset">
-						<FormLabel component="legend">Tamanho</FormLabel>
-						<RadioGroup aria-label="sizes" name="sizes">
+						<h2>Tamanho</h2>
+						<RadioGroup aria-label="sizes" name="sizes" value={this.size} onChange={this.handleChange}>
 							{
 								this.sizes.map(size => {
-									return (<FormControlLabel value={size.value} control={<Radio />} label={size.name} />);
+									return (<FormControlLabel key={size.name} value={size.name} control={<Radio />} label={size.name} />);
 								})
 							}
 						</RadioGroup>
 					</FormControl>
-
-					<Button type="button" onClick={this.next}>Avançar</Button>
 				</form>
-
 			</section>
 		);
 	}

@@ -12,10 +12,10 @@ class MainHeader extends Component {
 			<header className={styles.header}>
 			<ul>
 				<li>
-					<Link href="/">Search</Link>
+					<Link href="/">Home</Link>
 				</li>
 				<li>
-					<Link href="/sets">Sets</Link>
+					<Link href="/pizza">Montar pizza</Link>
 				</li>
 			</ul>
 		</header>

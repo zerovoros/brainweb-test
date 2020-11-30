@@ -1,12 +1,11 @@
 import Axios from "axios";
 import { Subject } from "rxjs";
+import API from "../app.api";
 
 const flavor = new Subject();
 const border = new Subject();
 const size = new Subject();
 const dough = new Subject();
-
-const API = 'http://localhost:3000/api';
 
 const pizzaService = {
 	setFlavor: (value: string[]) => flavor.next(value),

@@ -1,0 +1,8 @@
+@import '../../../styles/mixins';
+
+.half { justify-content: center; }
+
+.flavors {
+	justify-content: space-evenly;
+	@include break-max(lg) { display: grid; }
+}

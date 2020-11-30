@@ -1,0 +1,10 @@
+@import '../../../styles/mixins';
+
+.resume {
+	justify-content: center;
+	h2 { text-align: center; }
+}
+
+.table {
+	min-width: 320px;
+}

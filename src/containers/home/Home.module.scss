@@ -1,3 +1,12 @@
+@import '../../styles/mixins';
+
 .home {
 	min-height: calc(100vh - 100px);
+
+	a {
+		font-weight: 600;
+		text-transform: uppercase;
+		color: #1976d2;
+		&:hover { color: #f6a5c0; }
+	}
 }

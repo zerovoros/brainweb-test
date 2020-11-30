@@ -1,0 +1,59 @@
+@import './mixins';
+
+html, body {
+	padding: 0;
+	margin: 0;
+	font-family: Roboto, Oxygen, -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* { box-sizing: border-box; }
+
+section {
+	padding: 40px 120px;
+	@include break-max(md) { padding: 48px 8px; }
+}
+
+.full-vh {
+	min-height: calc(100vh - 100px);
+}
+
+.step {
+	padding: 48px 15%;
+	@include break-max(md) { padding: 48px 8px; }
+}
+
+.hidden { display: none; }
+
+.row {
+	display: flex;
+	width: 100%;
+}
+
+.btn-group {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 48px;
+}
+
+.btn-group > button { margin: 0 16px; }
+
+.modal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.paper {
+	background-color: white;
+	border-radius: 8px;
+	padding: 40px;
+	text-align: center;
+	h2 { margin-top: 0; }
+	button { margin: 0 16px; }
+}

@@ -1,7 +1,10 @@
+@import '../../styles/mixins';
+
 .footer {
-	background-color: black;
+	background-color: #1976d2;
 	color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }

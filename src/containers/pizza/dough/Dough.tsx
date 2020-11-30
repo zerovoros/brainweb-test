@@ -11,7 +11,6 @@ class Dough extends Component {
 
 	constructor(props: any) {
 		super(props);
-		console.log(props);
 
 		this.doughs = props.doughs;
 		this.dough = props.dough;
@@ -41,29 +40,26 @@ class Dough extends Component {
 
 	render() {
 		return (
-			<section>
-				<form>
-					<FormControl component="fieldset">
+			<form>
+				<div className={`row ${styles.radios}`}>
+					<FormControl component="div">
 						<h2>Massa</h2>
-						<RadioGroup aria-label="doughs" name="doughs" value={this.dough} onChange={this.handleChangeDough}>
-							{
-								this.doughs.map(dough => {
-									return (<FormControlLabel key={dough.name} value={dough.name} control={<Radio />} label={dough.name} />);
-								})
-							}
-						</RadioGroup>
-
-						<h2>Borda</h2>
-						<RadioGroup aria-label="borders" name="borders" value={this.border} onChange={this.handleChangeBorder}>
-							{
-								this.borders.map(border => {
-									return (<FormControlLabel key={border.name} value={border.name} control={<Radio />} label={border.name} />);
-								})
-							}
+						<RadioGroup className="radio-group" aria-label="doughs" name="doughs" value={this.dough} onChange={this.handleChangeDough}>
+							{this.doughs.map(dough => {
+								return (<FormControlLabel key={dough.name} value={dough.name} control={<Radio />} label={dough.name} />);
+							})}
 						</RadioGroup>
 					</FormControl>
-				</form>
-			</section>
+					<FormControl component="div">
+						<h2>Borda</h2>
+						<RadioGroup aria-label="borders" name="borders" value={this.border} onChange={this.handleChangeBorder}>
+							{this.borders.map(border => {
+								return (<FormControlLabel key={border.name} value={border.name} control={<Radio />} label={border.name} />);
+							})}
+						</RadioGroup>
+					</FormControl>
+				</div>
+			</form>
 		);
 	}
 }

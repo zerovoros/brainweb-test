@@ -9,7 +9,10 @@ class MainFooter extends Component {
 	render() {
 		return (
 			<footer className={styles.footer}>
-				<p>Bruno F. P. Gonçalves - 11/2020</p>
+				<p>
+					Bruno Gonçalves - brunnofpg@hotmail.com <br />
+					Teste BrainWeb - 11/2020
+				</p>
 			</footer>
 		);
 	}

@@ -1,3 +1,4 @@
+import Axios from "axios";
 import { Subject } from "rxjs";
 
 const flavor = new Subject();
@@ -8,7 +9,7 @@ const dough = new Subject();
 const API = 'http://localhost:3000/api';
 
 const pizzaService = {
-	setFlavor: (value: string) => flavor.next(value),
+	setFlavor: (value: string[]) => flavor.next(value),
 	getFlavor: () => flavor.asObservable(),
 
 	setBorder: (value: string) => border.next(value),
@@ -69,6 +70,16 @@ const pizzaService = {
 			return error;
 		}
 	},
+
+	savePizza: async (body: any) => {
+		try {
+			const pizza: any = await Axios.post(`${API}/pizza`, body);
+			return pizza;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
+	}
 };
 
 export default pizzaService;

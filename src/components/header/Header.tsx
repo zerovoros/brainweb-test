@@ -1,4 +1,4 @@
-import { Link } from '@material-ui/core';
+import Link from 'next/link'
 import { Component } from 'react';
 import styles from './Header.module.scss';
 
@@ -12,10 +12,14 @@ class MainHeader extends Component {
 			<header className={styles.header}>
 			<ul>
 				<li>
-					<Link href="/">Home</Link>
+					<Link as="/" href="/">
+						<a>Home</a>
+					</Link>
 				</li>
 				<li>
-					<Link href="/pizza">Montar pizza</Link>
+					<Link as="/pizza" href="/pizza">
+						<a>Montar pizza</a>
+					</Link>
 				</li>
 			</ul>
 		</header>

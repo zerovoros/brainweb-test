@@ -1,5 +1,5 @@
 import { Component } from "react";
-import pizzaService from "../../services/pizza.service";
+import Link from 'next/link'
 import styles from './Home.module.scss';
 
 class Home extends Component {
@@ -8,15 +8,12 @@ class Home extends Component {
 		super(props);
 	}
 
-	async componentDidMount() {
-		const x = await pizzaService.getSizeList();
-		console.log(x);
-	}
-
 	render() {
 		return (
 			<section className={styles.home}>
-				<p>HOME WORKS</p>
+				<p>candidato: Bruno Felipe P. Gonçalves</p>
+				<p>e-mail: brunnofpg@hotmail.com</p>
+				<Link href="https://github.com/zerovoros/brainweb-test"><a target="_blank">Acessar Github</a></Link>
 			</section>
 		);
 	}

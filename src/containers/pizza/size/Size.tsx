@@ -28,20 +28,18 @@ class Size extends Component {
 
 	render() {
 		return (
-			<section>
-				<form>
-					<FormControl component="fieldset">
+			<form>
+				<div className={`row ${styles.sizes}`}>
+					<FormControl component="div">
 						<h2>Tamanho</h2>
 						<RadioGroup aria-label="sizes" name="sizes" value={this.size} onChange={this.handleChange}>
-							{
-								this.sizes.map(size => {
-									return (<FormControlLabel key={size.name} value={size.name} control={<Radio />} label={size.name} />);
-								})
-							}
+							{this.sizes.map(size => {
+								return (<FormControlLabel key={size.name} value={size.name} control={<Radio />} label={size.name} />);
+							})}
 						</RadioGroup>
 					</FormControl>
-				</form>
-			</section>
+				</div>
+			</form>
 		);
 	}
 }

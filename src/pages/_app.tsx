@@ -3,7 +3,7 @@ import Head from 'next/head';
 import MainHeader from '../components/header/Header';
 import MainFooter from '../components/footer/Footer';
 import Loader from '../components/loader/Loader';
-import '../styles/globals.css'
+import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }: any) {
 	return (

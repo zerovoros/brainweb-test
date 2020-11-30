@@ -1,0 +1,6 @@
+@import '../../../styles/mixins';
+
+.radios {
+	justify-content: space-evenly;
+	@include break-max(lg) { display: grid; }
+}
